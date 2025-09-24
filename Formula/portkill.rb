@@ -3,7 +3,7 @@ class Portkill < Formula
   homepage "https://github.com/mr-tanta/portkill"
   url "https://github.com/mr-tanta/portkill/archive/9ea54638854a943d84751008a1cf8472075cdfb0.tar.gz"
   version "2.0.0"
-  sha256 "" # Will be calculated automatically by Homebrew
+  sha256 "bf623bd4f71d9a499f971d4fe558231ebffbd86f12c946d8c058ce9483e31b94"
   license "MIT"
 
   depends_on "bash"
