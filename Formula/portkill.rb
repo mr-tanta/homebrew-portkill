@@ -1,9 +1,9 @@
 class Portkill < Formula
-  desc "Advanced port management and network analysis tool"
+  desc "Advanced port management and network analysis tool with performance benchmarking"
   homepage "https://github.com/mr-tanta/portkill"
-  url "https://github.com/mr-tanta/portkill/archive/9ea54638854a943d84751008a1cf8472075cdfb0.tar.gz"
-  version "2.0.0"
-  sha256 "bf623bd4f71d9a499f971d4fe558231ebffbd86f12c946d8c058ce9483e31b94"
+  url "https://github.com/mr-tanta/portkill/archive/v2.3.0.tar.gz"
+  version "2.3.0"
+  sha256 "65e5e15da6a527b90b82796707e9b2835cf31f03945d7ae941c15bf22feced09"
   license "MIT"
 
   depends_on "bash"
@@ -15,7 +15,7 @@ class Portkill < Formula
 
   test do
     system "#{bin}/portkill", "--version"
-    assert_match "PortKill 2.0.0", shell_output("#{bin}/portkill --version")
+    assert_match "PortKill 2.3.0", shell_output("#{bin}/portkill --version")
   end
 
   def caveats
@@ -27,7 +27,14 @@ class Portkill < Formula
         portkill 3000 8080          # Kill processes on multiple ports
         portkill 3000-3005          # Kill processes on port range
         portkill list 3000          # List processes on port 3000
+        portkill benchmark 3000     # Performance test port 3000
+        portkill benchmark 80 google.com  # Test remote server performance
         portkill menu               # Interactive mode
+      
+      New in v2.3.0: Port Performance Benchmarking
+      - Test connection speed and reliability
+      - Comprehensive performance metrics
+      - Support for local and remote hosts
       
       For more information, run: portkill --help
     EOS
