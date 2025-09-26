@@ -3,7 +3,7 @@ class Portkill < Formula
   homepage "https://github.com/mr-tanta/portkill"
   url "https://github.com/mr-tanta/portkill/archive/v3.0.0.tar.gz"
   version "3.0.0"
-  sha256 "392b7483d64469dfd5f295fe3bf380e927ddb102155bfee3cd3e0088d9d99c56"
+  sha256 "202bf7af45def6f67713514d6b8a27fa1174e5f8520e7091c0129281fe5ff1b2"
   license "MIT"
 
   depends_on "bash"
