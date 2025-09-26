@@ -1,9 +1,9 @@
 class Portkill < Formula
-  desc "Advanced port management and network analysis tool with performance benchmarking"
+  desc "Lightweight, zero-dependency port management tool following Unix philosophy"
   homepage "https://github.com/mr-tanta/portkill"
-  url "https://github.com/mr-tanta/portkill/archive/v2.3.0.tar.gz"
-  version "2.3.0"
-  sha256 "65e5e15da6a527b90b82796707e9b2835cf31f03945d7ae941c15bf22feced09"
+  url "https://github.com/mr-tanta/portkill/archive/v3.0.0.tar.gz"
+  version "3.0.0"
+  sha256 "392b7483d64469dfd5f295fe3bf380e927ddb102155bfee3cd3e0088d9d99c56"
   license "MIT"
 
   depends_on "bash"
@@ -15,7 +15,7 @@ class Portkill < Formula
 
   test do
     system "#{bin}/portkill", "--version"
-    assert_match "PortKill 2.3.0", shell_output("#{bin}/portkill --version")
+    assert_match "PortKill 3.0.0", shell_output("#{bin}/portkill --version")
   end
 
   def caveats
@@ -31,10 +31,11 @@ class Portkill < Formula
         portkill benchmark 80 google.com  # Test remote server performance
         portkill menu               # Interactive mode
       
-      New in v2.3.0: Port Performance Benchmarking
-      - Test connection speed and reliability
-      - Comprehensive performance metrics
-      - Support for local and remote hosts
+      New in v3.0.0: SIMPLIFICATION RELEASE - Back to Unix Roots
+      - Zero dependencies: Pure Bash with standard Unix utilities only
+      - Lightweight: 200x smaller than alternatives (72KB total)
+      - Reliable: Simpler code means fewer bugs
+      - Fast: Instant startup, no runtime overhead
       
       For more information, run: portkill --help
     EOS
