@@ -1,9 +1,9 @@
 class Portkill < Formula
   desc "Lightweight, zero-dependency port management tool following Unix philosophy"
   homepage "https://github.com/mr-tanta/portkill"
-  url "https://github.com/mr-tanta/portkill/archive/v3.0.0.tar.gz"
-  version "3.0.0"
-  sha256 "bfda7532ae849bbe5deec5ecc51c93998cf886d4d541933662e73b7fa957a050"
+  url "https://github.com/mr-tanta/portkill/archive/v3.1.0.tar.gz"
+  version "3.1.0"
+  sha256 "f16e6e27aea630b245f1fdddfd45b6c2421f1c4e4c8d2801f63d3053b4835075"
   license "MIT"
 
   depends_on "bash"
@@ -15,7 +15,7 @@ class Portkill < Formula
 
   test do
     system "#{bin}/portkill", "--version"
-    assert_match "PortKill 3.0.0", shell_output("#{bin}/portkill --version")
+    assert_match "PortKill 3.1.0", shell_output("#{bin}/portkill --version")
   end
 
   def caveats
@@ -31,11 +31,12 @@ class Portkill < Formula
         portkill benchmark 80 google.com  # Test remote server performance
         portkill menu               # Interactive mode
       
-      New in v3.0.0: SIMPLIFICATION RELEASE - Back to Unix Roots
-      - Zero dependencies: Pure Bash with standard Unix utilities only
-      - Lightweight: 200x smaller than alternatives (72KB total)
-      - Reliable: Simpler code means fewer bugs
-      - Fast: Instant startup, no runtime overhead
+      New in v3.1.0: Stability & Cross-Platform Release
+      - 20 bug fixes for reliability and correctness
+      - Added ss fallback for process detection
+      - macOS Bash 3.2 compatibility
+      - --no-color flag and automatic TTY detection
+      - Proper SIGTERM to SIGKILL escalation
       
       For more information, run: portkill --help
     EOS
