@@ -6,7 +6,7 @@ This is the official Homebrew tap for [PortKill](https://github.com/mr-tanta/por
 
 ```bash
 brew tap mr-tanta/portkill
-brew install portkill
+brew install mr-tanta/portkill/portkill
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ brew install portkill
 # Kill processes on port 3000
 portkill 3000
 
-# Kill processes on multiple ports  
+# Kill processes on multiple ports
 portkill 3000 8080 9000
 
 # Kill processes on port range
