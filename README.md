@@ -5,8 +5,15 @@ This is the official Homebrew tap for [PortKill](https://github.com/mr-tanta/por
 ## Installation
 
 ```bash
-brew tap mr-tanta/portkill
 brew install mr-tanta/portkill/portkill
+```
+
+Homebrew 6.0+ requires explicit trust for third-party taps before short-name installs. The command above trusts only the PortKill formula. If you have already tapped the repository and want to use `brew install portkill`, trust the formula first:
+
+```bash
+brew tap mr-tanta/portkill
+brew trust --formula mr-tanta/portkill/portkill
+brew install portkill
 ```
 
 ## Usage
