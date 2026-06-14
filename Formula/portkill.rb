@@ -1,9 +1,9 @@
 class Portkill < Formula
   desc "Lightweight local port management tool"
   homepage "https://github.com/mr-tanta/portkill"
-  url "https://github.com/mr-tanta/portkill/archive/refs/tags/v3.1.1.tar.gz"
-  version "3.1.1"
-  sha256 "4be05f61748ad93db87640183013dca7825f07cfabb125a6d654074b4d67ee80"
+  url "https://github.com/mr-tanta/portkill/archive/refs/tags/v3.2.0.tar.gz"
+  version "3.2.0"
+  sha256 "bcdba82153275c02a65177442f92285d64de2e48ca44697c29485e0949145525"
   license "MIT"
 
   depends_on "bash"
@@ -26,11 +26,11 @@ class Portkill < Formula
         portkill benchmark 80 google.com  # Test remote server performance
         portkill menu               # Interactive mode
 
-      New in v3.1.1: Reliability & Packaging Fixes
-      - Exact port matching avoids false positives
-      - JSON history export and Docker JSON output fixes
-      - Safer benchmark host validation
-      - Improved install, uninstall, and release package assets
+      New in v3.2.0: Diagnostics & Presets
+      - Preset port groups: --preset node|web|db|full
+      - Read-only cache diagnostics: portkill cache doctor
+      - Richer doctor output with restart guidance
+      - Safer manual restart flow; PortKill does not auto-run commands
 
       For more information, run: portkill --help
     EOS
@@ -38,6 +38,6 @@ class Portkill < Formula
 
   test do
     system "#{bin}/portkill", "--version"
-    assert_match "PortKill 3.1.1", shell_output("#{bin}/portkill --version")
+    assert_match "PortKill 3.2.0", shell_output("#{bin}/portkill --version")
   end
 end
